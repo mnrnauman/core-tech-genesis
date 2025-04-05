@@ -44,7 +44,7 @@ const blogPosts = [
   {
     id: 5,
     title: 'The Benefits of Custom CRM Solutions',
-    excerpt: 'Off-the-shelf CRM solutions don't always meet the specific needs of every business. Learn how custom CRM development can provide tailored solutions that perfectly align with your business processes.',
+    excerpt: "Off-the-shelf CRM solutions don't always meet the specific needs of every business. Learn how custom CRM development can provide tailored solutions that perfectly align with your business processes.",
     date: 'January 30, 2025',
     author: 'Nadeem Yaseen',
     tags: ['CRM', 'Software Development', 'Business Efficiency'],

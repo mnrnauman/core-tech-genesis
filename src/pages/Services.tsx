@@ -54,7 +54,7 @@ const services = [
     id: 'seo',
     title: 'SEO & Digital Marketing',
     description: 'Strategic digital marketing services to boost your online visibility and drive business growth.',
-    longDescription: 'Our digital marketing services help you stand out in today's competitive online landscape. From comprehensive SEO strategies to targeted content marketing, we develop data-driven campaigns that increase your visibility and drive qualified traffic to your business.',
+    longDescription: "Our digital marketing services help you stand out in today's competitive online landscape. From comprehensive SEO strategies to targeted content marketing, we develop data-driven campaigns that increase your visibility and drive qualified traffic to your business.",
     icon: Search,
     features: [
       'SEO Strategy Development',
