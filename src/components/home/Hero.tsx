@@ -55,7 +55,7 @@ const Hero = () => {
           
           <div className="relative animation-delay-300 animate-fade-in hidden lg:block">
             <div className="relative w-full h-[500px]">
-              {/* Main display - Cloud Dashboard */}
+              {/* Main display - Service Management Dashboard */}
               <div className="absolute right-0 top-0 w-[90%] h-[300px] bg-gencore-darker rounded-lg border border-gray-800 overflow-hidden shadow-2xl">
                 <div className="h-8 bg-gray-900 flex items-center px-3">
                   <div className="flex space-x-2">
@@ -67,50 +67,55 @@ const Hero = () => {
                 <div className="p-4">
                   <div className="flex justify-between items-center mb-6">
                     <div className="flex items-center space-x-4">
-                      <div className="w-10 h-10 bg-blue-600/30 rounded-md flex items-center justify-center">
-                        <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+                      <div className="w-10 h-10 bg-gencore-orange/30 rounded-md flex items-center justify-center">
+                        <svg className="w-6 h-6 text-gencore-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
                         </svg>
                       </div>
-                      <div className="text-white font-medium">Cloud Management Dashboard</div>
+                      <div className="text-white font-medium">IT Service Management</div>
                     </div>
                     <div className="text-gencore-orange font-medium">Admin</div>
                   </div>
                   <div className="grid grid-cols-3 gap-4 mb-4">
                     <div className="bg-gray-800/50 p-3 rounded-md">
-                      <div className="text-gray-400 text-xs mb-1">Active Servers</div>
-                      <div className="text-white font-bold">24/24</div>
+                      <div className="text-gray-400 text-xs mb-1">Active Tickets</div>
+                      <div className="text-white font-bold">18</div>
                       <div className="w-full h-1 bg-gray-700 mt-2">
-                        <div className="w-full h-1 bg-green-500"></div>
+                        <div className="w-[70%] h-1 bg-yellow-500"></div>
                       </div>
                     </div>
                     <div className="bg-gray-800/50 p-3 rounded-md">
-                      <div className="text-gray-400 text-xs mb-1">CPU Usage</div>
-                      <div className="text-white font-bold">42%</div>
+                      <div className="text-gray-400 text-xs mb-1">SLA Status</div>
+                      <div className="text-white font-bold">92%</div>
                       <div className="w-full h-1 bg-gray-700 mt-2">
-                        <div className="w-[42%] h-1 bg-yellow-500"></div>
+                        <div className="w-[92%] h-1 bg-green-500"></div>
                       </div>
                     </div>
                     <div className="bg-gray-800/50 p-3 rounded-md">
-                      <div className="text-gray-400 text-xs mb-1">Memory</div>
-                      <div className="text-white font-bold">3.8/8 GB</div>
+                      <div className="text-gray-400 text-xs mb-1">Response Time</div>
+                      <div className="text-white font-bold">15 min</div>
                       <div className="w-full h-1 bg-gray-700 mt-2">
-                        <div className="w-[45%] h-1 bg-blue-500"></div>
+                        <div className="w-[85%] h-1 bg-blue-500"></div>
                       </div>
                     </div>
                   </div>
                   <div className="bg-gray-900/50 rounded-lg p-4">
                     <div className="flex justify-between items-center mb-3">
-                      <div className="text-white font-medium">Server Status</div>
-                      <div className="text-xs text-gencore-orange">Live</div>
+                      <div className="text-white font-medium">Recent Incidents</div>
+                      <div className="text-xs text-gencore-orange">View All</div>
                     </div>
                     <div className="space-y-2">
-                      {['Web Server', 'Database', 'API Gateway', 'Auth Service'].map((service, idx) => (
+                      {[
+                        { name: 'Network Outage', status: 'Critical', color: 'red' },
+                        { name: 'Email Server', status: 'Resolved', color: 'green' },
+                        { name: 'Database Backup', status: 'In Progress', color: 'yellow' },
+                        { name: 'Security Alert', status: 'Pending', color: 'blue' }
+                      ].map((item, idx) => (
                         <div key={idx} className="flex justify-between items-center py-1">
-                          <div className="text-gray-300 text-sm">{service}</div>
+                          <div className="text-gray-300 text-sm">{item.name}</div>
                           <div className="flex items-center">
-                            <div className="w-2 h-2 rounded-full bg-green-500 mr-2"></div>
-                            <span className="text-xs text-gray-400">Online</span>
+                            <div className={`w-2 h-2 rounded-full bg-${item.color}-500 mr-2`}></div>
+                            <span className="text-xs text-gray-400">{item.status}</span>
                           </div>
                         </div>
                       ))}
@@ -119,7 +124,7 @@ const Hero = () => {
                 </div>
               </div>
               
-              {/* Secondary screen - Analytics */}
+              {/* Secondary screen - Network Monitoring */}
               <div className="absolute -bottom-10 -right-5 w-[60%] h-[200px] bg-gencore-darker rounded-lg border border-gray-800 overflow-hidden shadow-2xl transform rotate-3">
                 <div className="h-6 bg-gray-900 flex items-center px-3">
                   <div className="flex space-x-1.5">
@@ -129,30 +134,32 @@ const Hero = () => {
                   </div>
                 </div>
                 <div className="p-3">
-                  <div className="text-white text-xs font-medium mb-2">Website Analytics</div>
+                  <div className="text-white text-xs font-medium mb-2">Network Monitoring</div>
                   <div className="flex space-x-2 mb-3">
-                    <div className="text-[10px] px-2 py-0.5 bg-gencore-orange/20 text-gencore-orange rounded-full">Daily</div>
-                    <div className="text-[10px] px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full">Weekly</div>
-                    <div className="text-[10px] px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full">Monthly</div>
+                    <div className="text-[10px] px-2 py-0.5 bg-gencore-orange/20 text-gencore-orange rounded-full">Realtime</div>
+                    <div className="text-[10px] px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full">Last Hour</div>
+                    <div className="text-[10px] px-2 py-0.5 bg-gray-700 text-gray-300 rounded-full">Daily</div>
                   </div>
                   <div className="flex items-end h-16 space-x-1">
-                    {[40, 65, 35, 50, 90, 75, 55, 80, 60, 70, 30, 85].map((height, idx) => (
+                    {[65, 80, 50, 90, 60, 40, 70, 85, 75, 95, 65, 80].map((height, idx) => (
                       <div key={idx} className="flex-1">
                         <div 
-                          className="w-full bg-gencore-orange/80 rounded-t-sm" 
+                          className={`w-full rounded-t-sm ${idx % 3 === 0 ? 'bg-blue-500/80' : idx % 3 === 1 ? 'bg-green-500/80' : 'bg-gencore-orange/80'}`}
                           style={{ height: `${height}%` }}
                         ></div>
                       </div>
                     ))}
                   </div>
                   <div className="flex justify-between mt-2">
-                    <div className="text-[8px] text-gray-400">01 Apr</div>
-                    <div className="text-[8px] text-gray-400">13 Apr</div>
+                    <div className="text-[8px] text-gray-400">Router</div>
+                    <div className="text-[8px] text-gray-400">Gateway</div>
+                    <div className="text-[8px] text-gray-400">Server</div>
+                    <div className="text-[8px] text-gray-400">DNS</div>
                   </div>
                 </div>
               </div>
               
-              {/* Third screen - Security */}
+              {/* Third screen - Cybersecurity */}
               <div className="absolute -left-5 bottom-28 w-[40%] h-[180px] bg-gencore-darker rounded-lg border border-gray-800 overflow-hidden shadow-2xl transform -rotate-6">
                 <div className="h-6 bg-gray-900 flex items-center px-3">
                   <div className="flex space-x-1.5">
@@ -163,20 +170,27 @@ const Hero = () => {
                 </div>
                 <div className="p-3">
                   <div className="text-white text-xs font-medium mb-2">Security Monitor</div>
+                  <div className="bg-gray-800/50 p-2 rounded-md mb-2">
+                    <div className="flex items-center justify-between">
+                      <div className="text-[10px] text-gray-300">Threat Detection</div>
+                      <div className="text-[10px] text-green-400 font-medium">Active</div>
+                    </div>
+                  </div>
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
-                      <div className="text-[10px] text-gray-300">Firewall Status</div>
-                      <div className="w-4 h-4 rounded-full bg-green-500/20 flex items-center justify-center">
-                        <div className="w-2 h-2 rounded-full bg-green-500"></div>
-                      </div>
+                      <div className="text-[10px] text-gray-300">Malware Blocked</div>
+                      <div className="text-[10px] text-white font-medium">247</div>
                     </div>
                     <div className="flex items-center justify-between">
-                      <div className="text-[10px] text-gray-300">Threats Blocked</div>
-                      <div className="text-[10px] text-white font-medium">143</div>
+                      <div className="text-[10px] text-gray-300">Intrusion Attempts</div>
+                      <div className="text-[10px] text-white font-medium">18</div>
                     </div>
                     <div className="flex items-center justify-between">
                       <div className="text-[10px] text-gray-300">Last Scan</div>
-                      <div className="text-[10px] text-gray-400">2 mins ago</div>
+                      <div className="text-[10px] text-gray-400">5 mins ago</div>
+                    </div>
+                    <div className="bg-gencore-orange/10 rounded-md p-1.5 mt-1">
+                      <div className="text-[9px] text-gencore-orange">Security Status: Protected</div>
                     </div>
                   </div>
                 </div>
